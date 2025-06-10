@@ -1,9 +1,10 @@
-import React from 'react'
+"use client";
+import React from "react";
 
-type Props = {}
-
-export default function HomePage({}: Props) {
+export default function HomePage(): React.JSX.Element {
   return (
-    <div>HomePage</div>
-  )
+    <div className={"center-x-y"}>
+      <h1>Welcome to our shop</h1>
+    </div>
+  );
 }

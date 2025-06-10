@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import AppRouter from "@/app/routes/index";
+import AppRouter from "@/app/routes";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
