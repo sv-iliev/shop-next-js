@@ -1,0 +1,24 @@
+$navBarHeight: 30px;
+
+.nav-bar {
+  width: 100%;
+  height: $navBarHeight;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #465649;
+  padding: 0 8px;
+}
+
+.not-full-height,
+.full-height {
+  width: 100%;
+}
+
+.not-full-height {
+  height: calc(100% - $navBarHeight);
+}
+
+.full-height {
+  height: 100%;
+}
