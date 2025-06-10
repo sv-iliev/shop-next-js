@@ -20,7 +20,8 @@ import Link from "next/link";
 const AppRouter: React.FC = () => {
   const route: string = usePathname();
   const isNotLoginRoute: boolean = route !== LOGIN_ROUTE;
-  const isLogedIn: boolean = true;
+  // ZAK: This is a placeholder for the login state.
+  const isLogedIn: boolean = false;
 
   return (
     <Router>
@@ -37,9 +38,9 @@ const AppRouter: React.FC = () => {
       )}
 
       <div
-        className={
+        className={`${
           isNotLoginRoute ? styles["not-full-height"] : styles["full-height"]
-        }
+        } center-x-y`}
       >
         <Routes>
           <Route path={HOME_ROUTE} element={<HomePage />} />

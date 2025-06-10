@@ -13,7 +13,7 @@ export default function NotFoundPage(): React.JSX.Element {
         onClick={() => {
           router.push("/");
         }}
-        className={styles.button}
+        className={`${styles.button} btn-primary`}
       >
         Go to Home Page
       </button>

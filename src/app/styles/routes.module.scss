@@ -1,4 +1,5 @@
 $navBarHeight: 30px;
+$content-margin-x: 16px;
 
 .nav-bar {
   width: 100%;
@@ -12,7 +13,8 @@ $navBarHeight: 30px;
 
 .not-full-height,
 .full-height {
-  width: 100%;
+  width: calc(100% - 2 * $content-margin-x);
+  margin: 0px $content-margin-x;
 }
 
 .not-full-height {
@@ -21,4 +23,8 @@ $navBarHeight: 30px;
 
 .full-height {
   height: 100%;
+}
+
+.button {
+  margin-top: 8px;
 }
