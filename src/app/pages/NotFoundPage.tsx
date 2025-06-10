@@ -5,10 +5,9 @@ import { useRouter } from "next/navigation";
 
 export default function NotFoundPage(): React.JSX.Element {
   const router = useRouter();
-  const { holder } = styles;
 
   return (
-    <div className={holder}>
+    <div className={styles.holder}>
       <h1>Page not found!</h1>
       <button
         onClick={() => {
