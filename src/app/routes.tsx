@@ -8,21 +8,31 @@ import Cart from "@/app/pages/Cart";
 import Profile from "@/app/pages/Profile";
 import NotFoundPage from "@/app/pages/NotFoundPage";
 import { usePathname } from "next/navigation";
-import { LOGIN_ROUTE } from "@/app/helpers/constants";
+import {
+  LOGIN_ROUTE,
+  PRODUCTS_ROUTE,
+  PROFILE_ROUTE,
+  HOME_ROUTE,
+} from "@/app/helpers/constants";
 import styles from "@/app/styles/routes.module.scss";
 import Link from "next/link";
 
 const AppRouter: React.FC = () => {
   const route: string = usePathname();
   const isNotLoginRoute: boolean = route !== LOGIN_ROUTE;
+  const isLogedIn: boolean = false;
 
   return (
     <Router>
       {isNotLoginRoute && (
         <div className={styles["nav-bar"]}>
-          <Link href="/">Home</Link>
-          <Link href="/products">Products</Link>
-          <Link href="/profile">Profile</Link>
+          <Link href={HOME_ROUTE}>Home</Link>
+          <Link href={PRODUCTS_ROUTE}>Products</Link>
+          {isLogedIn ? (
+            <Link href={PROFILE_ROUTE}>Profile</Link>
+          ) : (
+            <Link href={LOGIN_ROUTE}>Profile</Link>
+          )}
         </div>
       )}
 
@@ -32,11 +42,11 @@ const AppRouter: React.FC = () => {
         }
       >
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path={HOME_ROUTE} element={<HomePage />} />
           <Route path={LOGIN_ROUTE} element={<LoginPage />} />
-          <Route path="/products" element={<ProductsPage />} />
+          <Route path={PRODUCTS_ROUTE} element={<ProductsPage />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path={PROFILE_ROUTE} element={<Profile />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>
