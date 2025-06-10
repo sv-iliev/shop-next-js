@@ -20,7 +20,7 @@ import Link from "next/link";
 const AppRouter: React.FC = () => {
   const route: string = usePathname();
   const isNotLoginRoute: boolean = route !== LOGIN_ROUTE;
-  const isLogedIn: boolean = false;
+  const isLogedIn: boolean = true;
 
   return (
     <Router>
@@ -31,7 +31,7 @@ const AppRouter: React.FC = () => {
           {isLogedIn ? (
             <Link href={PROFILE_ROUTE}>Profile</Link>
           ) : (
-            <Link href={LOGIN_ROUTE}>Profile</Link>
+            <Link href={LOGIN_ROUTE}>Login</Link>
           )}
         </div>
       )}
